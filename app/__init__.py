@@ -7,6 +7,7 @@ from .config.config import config
 
 def create_app():
     app = Flask(__name__)
+    CORS(app)
     
     env = os.getenv('FLASK_ENV', 'development')
     app.config.from_object(config[env])
